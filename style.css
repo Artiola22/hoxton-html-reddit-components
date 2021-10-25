@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+.header {
+  padding: 10px;
+}
+.header .logo {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  align-items: center;
+  grid-gap: 10px;
+}
+
+.main {
+  background-color: #dae0e6;
+  overflow: scroll;
+
+  display: grid;
+  grid-template-columns: minmax(400px, 1000px);
+  justify-content: center;
+}
+
+.main-content {
+  display: grid;
+  grid-template:
+    "trending trending" auto
+    "posts side-bar" 1fr /
+    1fr 300px;
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.trending {
+  grid-area: trending;
+  padding: 20px 0;
+}
+
+.trending h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+.trending-items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 150px;
+  grid-gap: 10px;
+}
+.trending-item {
+  border: solid 1px rgba(0, 0, 0, 0.226);
+
+}
+
+.trending {
+  grid-area: trending;
+  padding: 10px;
+}
+.trending-post img{
+  height: 100%;
+  width: 100%;
+  opacity: 0.9;
+}
+.trending-posts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 150px;
+  grid-gap: 10px;
+  }
+.trending-post {
+ border-radius: 5px;
+  position: relative;
+  text-align: center;
+  color: white;
+.posts {
+  grid-area: posts;
+  padding: 20px 0px;
+  display: grid;
+  align-content: start;
+  grid-gap: 10px;
+}
+.post {
+  height: 150px;
+  display: grid;
+  place-items: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+}
+.side-bar {
+  display: none;
+}
